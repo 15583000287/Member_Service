@@ -1,0 +1,16 @@
+#会员服务
+server:
+  port: 8081
+spring:
+  application:
+    name: member-service
+
+#Eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://139.196.94.253:8761/eureka/
+  instance:
+    #写定IP
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
